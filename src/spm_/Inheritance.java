@@ -10,5 +10,8 @@ package spm_;
  * @author hratlk
  */
 public class Inheritance {
+    public void inheritance(){
+     System.out.print("Inheritance");
+    }
     
 }
