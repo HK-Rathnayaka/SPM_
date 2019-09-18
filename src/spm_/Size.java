@@ -18,7 +18,7 @@ import java.io.*;
 public class Size {
 
      public int analizeComplexityDueToSize(String line) {
-       System.out.print("Size");
+       System.out.print("Size ");
         return 0;
     }
 public class ArrayList_Testing {}
