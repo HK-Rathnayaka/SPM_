@@ -17,8 +17,8 @@ import java.util.Scanner;
 public class SPM_ {
 
     public static void main(String[] args) {
-
   
+
         System.out.println("Hi Girls  ");
 
     }
