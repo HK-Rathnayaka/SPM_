@@ -5,10 +5,15 @@
  */
 package spm_;
 
+import java.util.Arrays;
+
 /**
  *
  * @author hratlk
  */
 public class Size {
-    
+     public int analizeComplexityDueToSize(String line) {
+       System.out.print("Size");
+        return 0;
+    }
 }

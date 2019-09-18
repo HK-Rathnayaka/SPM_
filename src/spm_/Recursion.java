@@ -10,5 +10,10 @@ package spm_;
  * @author hratlk
  */
 public class Recursion {
-    
+        public int analizeComplexityDueToRecursion(String line) {
+     
+          System.out.print("Recursion");
+      
+        return 0;
+    }
 }
