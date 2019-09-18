@@ -9,6 +9,20 @@ package spm_;
  *
  * @author hratlk
  */
-public class Size {
-    //malshani
+
+
+import java.io.*;
+
+/**
+ *
+ * @author User
+ */
+//Main Function
+public class ArrayList_Testing {
+
+    /**
+     * @param args the command allLines arguments
+     */
 }
+
+
