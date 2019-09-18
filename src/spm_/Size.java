@@ -12,8 +12,12 @@ import java.util.Arrays;
  * @author hratlk
  */
 public class Size {
+<<<<<<< HEAD
      public int analizeComplexityDueToSize(String line) {
        System.out.print("Size");
         return 0;
     }
+=======
+    //malshani
+>>>>>>> 8682c4c0f1ca36dba31bf43d5889f1d16de95ca7
 }
