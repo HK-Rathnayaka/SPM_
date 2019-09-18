@@ -15,16 +15,6 @@ import java.util.Arrays;
 
 import java.io.*;
 
-/**
- *
- * @author User
- */
-//Main Function
-
-
-    /**
-     * @param args the command allLines arguments
-     */
 public class Size {
 
      public int analizeComplexityDueToSize(String line) {
