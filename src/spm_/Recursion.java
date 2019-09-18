@@ -12,7 +12,7 @@ package spm_;
 public class Recursion {
         public int analizeComplexityDueToRecursion(String line) {
      
-          System.out.print("Recursion");
+          System.out.print("Recursion p");
       
         return 0;
     }
