@@ -10,5 +10,10 @@ package spm_;
  * @author hratlk
  */
 public class ControlStructure {
-    
+    public int analizeComplexityDueControlStructure(String line) {
+       
+         System.out.print("Control Structure");
+
+        return 0;
+    }
 }
