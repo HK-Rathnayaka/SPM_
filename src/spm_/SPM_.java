@@ -5,10 +5,14 @@
  */
 package spm_;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import static spm_.Inheritance.analizeComplexityDueToInheritanceJ;
 
 /**
  *
@@ -16,51 +20,66 @@ import java.util.Scanner;
  */
 public class SPM_ {
 
-    public static void main(String[] args) {
-  
-
-        System.out.println("Hi Girls  ");
-
-    }
-
-    public int analyze(String fileName) {
+    public static void main(String[] args) throws IOException {
+        File fileJ = new File("C:\\Users\\hratlk\\Desktop\\n\\CodeN.txt");
+        File fileC = new File("C:\\Users\\hratlk\\Desktop\\n\\CodeC.txt");
+        File file123 = new File("C:\\Users\\hratlk\\Desktop\\n\\t123.txt");
+        
+        File file = file123;
+        String allLines = null;
+        String relatedLine = null;
+        String lng = "Java";
+        //String lng = "C";
+        
+        FileReader fileReader = new FileReader(file);
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
 
         Inheritance inheritance = new Inheritance();
-        ControlStructure controlStructure = new ControlStructure();
-        Recursion recursion = new Recursion();
         Size size = new Size();
+        Recursion recursion = new Recursion();
+        ControlStructure controlStructure = new ControlStructure();
 
-        int complexitySize = 0;
-        int complexityControlStructure = 0;
-        int complexityInheritance = 0;
-        int complexityRecursion = 0;
-        int complexity = 0;
+        int lineNo = 0;
 
-        // 1. read the file and load data to a list of strings
-        ArrayList<String> lines = loadFile(fileName);
-
-        for (String line : lines) {
-            complexitySize += size.analizeComplexityDueToSize(line);
-            complexityControlStructure += controlStructure.analizeComplexityDueControlStructure(line);
-            complexityInheritance += inheritance.analizeComplexityDueToInheritance(line);
-            complexityRecursion += recursion.analizeComplexityDueToRecursion(line);
-        }
-        return complexity;
-    }
-
-    private ArrayList<String> loadFile(String fileName) {
-        Scanner s = null;
         try {
-            s = new Scanner(new File("filepath"));
+
+            int Cnc = 0;
+            int Ctc = 0;
+            int Cs = 0;
+            int TW = 0;
+
+            while ((relatedLine = bufferedReader.readLine()) != null) {
+                //get inheritance weight
+                int CCi = inheritance.inheritance(file, lng);
+
+                allLines = relatedLine.replace("(", " ");
+                allLines = allLines.replace(")", " ");
+                allLines = allLines.replace(";", " ");
+
+                //methods
+                //Remove unnessasary
+                CCi = inheritance.checkInheritance(relatedLine, CCi);
+                //Recursion
+                boolean haveRecursion = recursion.calculateRecursion(relatedLine);
+                //ControlStructure
+                Ctc = controlStructure.getCtcValue(relatedLine);
+
+                //Total weight (TW) of a program statement
+                TW = Ctc + Cnc + CCi;
+                lineNo++;
+
+                System.out.print("Line No : " + lineNo + " |  Line : " + relatedLine + "   |      Inheritance " + CCi + "tw:" + TW + "\n");
+
+            }
+
+            bufferedReader.close();
+
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("Unable to open '" + file + "' file");
+        } catch (IOException e) {
+            System.out.println("Error of '" + file + "' file");
         }
-        ArrayList<String> list = new ArrayList<>();
-        while (s.hasNext()) {
-            list.add(s.next());
-        }
-        s.close();
-        return list;
+
     }
 
 }
