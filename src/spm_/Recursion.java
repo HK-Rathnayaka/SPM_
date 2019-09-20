@@ -21,8 +21,9 @@ public class Recursion {
       boolean isMethodFound = false;
       int count = 1;
       String[] returnTypes = {"void", "int", "float", "double", "String"};
-
-           while(line != null){
+      
+          // while(line != null){ >>to stop infinite lope and no nned sine 
+      //need to check in one sentence which send as string parameter to this method
                 boolean isPotentialMehtod = false;
                 boolean isFirstLine = false;
                 
@@ -31,7 +32,7 @@ public class Recursion {
                     String[] parts = line.split(" ");
                     parts[0] = parts[0].trim();
                     
-                    System.out.println("parts[0]: " + parts[0]);
+                   // System.out.println("parts[0]: " + parts[0]); >> this line no needs to print
                     
                     for (String returnType: returnTypes) {
                         if(parts[0].equals("public") || parts[0].equals("static") || parts[0].equals(returnType)){
@@ -46,7 +47,7 @@ public class Recursion {
                         String[] method = line.split(Pattern.quote("("));
                         
                         if(!method[0].trim().isEmpty()){
-                            System.out.println("Method name: " + method[0].trim());
+                          //  System.out.println("Method name: " + method[0].trim()); >>print statements no needs here
                             methodList.add(method[0].trim());
                             isMethodFound = true;
                             isFirstLine = true;
@@ -86,13 +87,13 @@ public class Recursion {
                     methodList.clear();
                 }
                 
-                System.out.println(line);
+               // System.out.println(line);
                 isFirstLine = false;
                 count++;
                 
                 //read next line
               //  line = reader.readLine();
-            }
+           // }
             //System.out.println("Potential recursive methods are: \n===============================================\n");
             
             //for(String m:methodList){

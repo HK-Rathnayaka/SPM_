@@ -18,7 +18,7 @@ import static spm_.Inheritance.analizeComplexityDueToInheritanceJ;
  *
  * @author hratlk
  */
-public class SPM_ {
+public class SPM_  {
 
     public static void main(String[] args) throws IOException {
         File fileJ = new File("C:\\Users\\hratlk\\Desktop\\n\\CodeN.txt");
@@ -60,15 +60,15 @@ public class SPM_ {
                 //Remove unnessasary
                 CCi = inheritance.checkInheritance(relatedLine, CCi);
                 //Recursion
-                boolean haveRecursion = recursion.calculateRecursion(relatedLine);
+               boolean haveRecursion = recursion.calculateRecursion(relatedLine);
                 //ControlStructure
                 Ctc = controlStructure.getCtcValue(relatedLine);
-
+                
                 //Total weight (TW) of a program statement
                 TW = Ctc + Cnc + CCi;
                 lineNo++;
 
-                System.out.print("Line No : " + lineNo + " |  Line : " + relatedLine + "   |      Inheritance " + CCi + "tw:" + TW + "\n");
+                System.out.print("Line No : " + lineNo + " &|Line : " + relatedLine + "&|Inheri" + CCi + "tw:" + TW + "\n");
 
             }
 

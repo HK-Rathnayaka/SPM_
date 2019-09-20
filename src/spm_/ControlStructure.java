@@ -17,13 +17,9 @@ public class ControlStructure {
     private String[] loopsKeywords = {"while", "while(", "for(", "for", "do-while(", "do-while", "foreach", "foreach("};
     private String[] switchStatementKeywords = {"case:", "case", "switch", "switch{"};
     private String[] operatorKeywords = {"&&", "||", "&", "|"};
-
     
-
-
     public ControlStructure() {
     }
-
     
     public int getCtcValue(String inputLineVal) {
         String lineWord;
